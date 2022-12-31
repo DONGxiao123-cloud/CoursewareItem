@@ -1,0 +1,44 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: DXW196917
+    url: jdbc:mysql://localhost:3306/weixin_course?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+      timeout: 20000ms
+  application:
+    name: wx_course
+server:
+      port: 5000
+oss:
+  endpoint: 'oss-cn-beijing.aliyuncs.com'
+  accessKeyId: '11'
+  accessKeySecret: '22'
+  bucketName: 'mszlu'
+
+wxpay:
+  mchid: '商家id'
+  key: '支付key'
+wxmini:
+  appid: 'wxa41e3856e8808122'
+  secret: 'aec92d36112a88554901ce0fd451771f'
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.mszlu.courseware.pojo
+  global-config:
+    db-config:
+      table-prefix: cw_
